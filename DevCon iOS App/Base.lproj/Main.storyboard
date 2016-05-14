@@ -1,25 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wDS-BC-7Nz">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="yGq-2i-TFe">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wDS-BC-7Nz" customClass="ViewController" customModule="DevCon_iOS_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="0fr-Tt-YcU"/>
+                        <viewControllerLayoutGuide type="bottom" id="nvw-jz-fQI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="wUW-Xm-dFp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hPA-wH-JD2">
+                                <rect key="frame" x="20" y="28" width="560" height="572"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </tableView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSm-4z-jss" userLabel="Loading Indicator">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bSd-cp-kCX">
+                                        <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bSd-cp-kCX" firstAttribute="centerX" secondItem="ZSm-4z-jss" secondAttribute="centerX" id="IUb-MS-TJ0"/>
+                                    <constraint firstItem="bSd-cp-kCX" firstAttribute="centerY" secondItem="ZSm-4z-jss" secondAttribute="centerY" id="eUN-mi-p2i"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hPA-wH-JD2" firstAttribute="leading" secondItem="wUW-Xm-dFp" secondAttribute="leadingMargin" id="3zH-Rg-eDh"/>
+                            <constraint firstItem="ZSm-4z-jss" firstAttribute="top" secondItem="0fr-Tt-YcU" secondAttribute="bottom" constant="-20" id="DMf-N1-Lio"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hPA-wH-JD2" secondAttribute="trailing" id="Hmy-WR-66E"/>
+                            <constraint firstItem="nvw-jz-fQI" firstAttribute="top" secondItem="ZSm-4z-jss" secondAttribute="bottom" id="NIK-6Y-9DL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZSm-4z-jss" secondAttribute="trailing" constant="-20" id="P9d-aG-nno"/>
+                            <constraint firstItem="nvw-jz-fQI" firstAttribute="top" secondItem="hPA-wH-JD2" secondAttribute="bottom" id="XE3-5f-W9a"/>
+                            <constraint firstItem="hPA-wH-JD2" firstAttribute="top" secondItem="0fr-Tt-YcU" secondAttribute="bottom" constant="8" symbolic="YES" id="anz-za-qWK"/>
+                            <constraint firstItem="ZSm-4z-jss" firstAttribute="leading" secondItem="wUW-Xm-dFp" secondAttribute="leadingMargin" constant="-20" id="bnq-fW-sCN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="ZSm-4z-jss" id="iOj-Sx-JGP"/>
+                        <outlet property="tableView" destination="hPA-wH-JD2" id="kfn-PS-4nE"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mz-N5-Byd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="209" y="-113"/>
         </scene>
     </scenes>
 </document>
